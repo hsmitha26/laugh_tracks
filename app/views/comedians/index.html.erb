@@ -1,0 +1,9 @@
+<section class="comedians-container">
+  <% @comedians.each do |comedian| %>
+    <section class="comedians" id="comedian-index-<%= comedian.id %>">
+      <%= comedian.name %>
+      <%= comedian.age %>
+      <%= comedian.city %>
+      </section>
+    <% end %>
+</section>
