@@ -4,6 +4,12 @@
       <%= comedian.name %>
       <%= comedian.age %>
       <%= comedian.city %>
-      </section>
+    </section>
+      <% comedian.specials.each do |special| %>
+        <section id="comedian-specials-<%= special.id %>">
+          <%= special.name %>
+          <%= special.run_time %>
+        </section>
+      <% end %>
     <% end %>
 </section>
