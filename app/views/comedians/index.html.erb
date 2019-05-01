@@ -1,9 +1,10 @@
 <section class="comedians-container">
   <% @comedians.each do |comedian| %>
-    <section class="comedians" id="comedian-index-<%= comedian.id %>">
+    <section id="comedian-index-<%= comedian.id %>">
       <%= comedian.name %>
       <%= comedian.age %>
       <%= comedian.city %>
+      <img class="face-pic" id="comedian-face-<%= comedian.id %>" src="<%= comedian.image %>"/>
     </section>
       <% comedian.specials.each do |special| %>
         <section id="comedian-specials-<%= special.id %>">
