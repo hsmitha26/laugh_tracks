@@ -1,16 +1,21 @@
 <section class="comedians-container">
   <% @comedians.each do |comedian| %>
-    <section id="comedian-index-<%= comedian.id %>">
-      <%= comedian.name %>
-      <%= comedian.age %>
-      <%= comedian.city %>
+    <div id="comedian-index-<%= comedian.id %>">
+      <ul>
+        <li>Name: <%= comedian.name %></li>
+        <li>Age: <%= comedian.age %></li>
+        <li>Birthplace: <%= comedian.city %></li>
+        <li>Number of Specials: <%= comedian.specials.count %></li>
+      </ul>
       <img class="face-pic" id="comedian-face-<%= comedian.id %>" src="<%= comedian.image %>"/>
-    </section>
+    </div>
       <% comedian.specials.each do |special| %>
-        <section id="comedian-specials-<%= special.id %>">
-          <%= special.name %>
-          <%= special.run_time %>
-        </section>
+        <div id="comedian-specials-<%= special.id %>">
+          <ul>
+            <li>Special Name: <%= special.name %></li>
+            <li>Run Time (in minutes): <%= special.run_time %></li>
+          </ul>
+        </div>
       <% end %>
     <% end %>
 </section>
