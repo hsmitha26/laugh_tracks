@@ -54,5 +54,16 @@ RSpec.describe "As a visitor, ", type: :feature do
         expect(page).to have_css("img[src*='#{@comedian_2.image}']")
       end
     end
+
+    it "I can see a count of specials for each comedian" do
+      visit '/comedians'
+
+      within "#comedian-index-#{@comedian_1.id}" do
+        expect(page).to have_content("Number of Specials: 2")
+      end
+      within "#comedian-index-#{@comedian_2.id}" do
+        expect(page).to have_content("Number of Specials: 1")
+      end
+    end
   end
 end
