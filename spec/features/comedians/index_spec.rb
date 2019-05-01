@@ -48,10 +48,10 @@ RSpec.describe "As a visitor, ", type: :feature do
       visit '/comedians'
 
       within "#comedian-index-#{@comedian_1.id}" do
-        expect(page).to have_css("img[src*='#{@comedian_1.image}']")
+        expect(page).to have_css("img[src='#{@comedian_1.image}']")
       end
       within "#comedian-index-#{@comedian_2.id}" do
-        expect(page).to have_css("img[src*='#{@comedian_2.image}']")
+        expect(page).to have_css("img[src='#{@comedian_2.image}']")
       end
     end
 
