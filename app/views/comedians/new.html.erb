@@ -1,0 +1,18 @@
+<h3>Add New Comedian</h3>
+
+<section class="new-comedian-form">
+  <%= form_for @comedian do |f| %>
+    <ul>
+      <li><%= f.label :name %></li>
+      <li><%= f.text_field :name %></li>
+
+      <li><%= f.label :age %></li>
+      <li><%= f.number_field :age %></li>
+
+      <li><%= f.label :city %></li>
+      <li><%= f.text_field :city %></li>
+
+      <li><%= f.submit %></li>
+    </ul>
+  <% end %>
+</section>
