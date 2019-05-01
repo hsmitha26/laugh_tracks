@@ -3,8 +3,6 @@ require 'rails_helper'
 RSpec.describe "As a visitor, ", type: :feature do
   describe "I visit the comedians index page, " do
     before :each do
-      # https://home-photo-deco.com/1508-large_default/charlie-chaplin-pop-art-canvas-print.jpg
-
       @comedian_1 = Comedian.create!(name: "Comedian 1", age: 30, city: "Denver", image: "https://home-photo-deco.com/1508-large_default/charlie-chaplin-pop-art-canvas-print.jpg")
       @comedian_2 = Comedian.create!(name: "Comedian 2", age: 31, city: "Boulder", image: "https://home-photo-deco.com/1508-large_default/charlie-chaplin-pop-art-canvas-print.jpg")
 
