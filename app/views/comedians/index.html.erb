@@ -8,7 +8,7 @@
   <% @comedians.each do |comedian| %>
     <div id="comedian-index-<%= comedian.id %>">
       <ul>
-        <li>Name: <%= comedian.name %></li>
+        <li>Name: <%= link_to comedian.name, "/comedians/#{comedian.id}" %></li>
         <li>Age: <%= comedian.age %></li>
         <li>Birthplace: <%= comedian.city %></li>
         <li>Number of Specials: <%= comedian.specials_count %></li>
