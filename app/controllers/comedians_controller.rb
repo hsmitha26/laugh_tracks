@@ -2,8 +2,11 @@ class ComediansController < ApplicationController
   def index
     if params[:age]
       @comedians = Comedian.find_by_query(params[:age])
+      @average_age = @comedians.find_average_age
     else
       @comedians = Comedian.all
+      @average_age = @comedians.find_average_age
+      @cities = @comedians.find_cities
     end
   end
 

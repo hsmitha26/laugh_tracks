@@ -33,5 +33,13 @@ RSpec.describe Comedian, type: :model do
     it "can find comedians via url query" do
       expect(Comedian.find_by_query(34)).to eq([@comedian_2, @comedian_3])
     end
+
+    it "can calculate average age of all comedians" do
+      expect(Comedian.find_average_age).to eq(33)
+    end
+
+    it "can find unique cities of comedians" do
+      expect(Comedian.find_cities).to eq("Boulder, Denver")
+    end
   end
 end

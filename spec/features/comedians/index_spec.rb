@@ -89,12 +89,12 @@ RSpec.describe "As a visitor, ", type: :feature do
     it "shows statistics about all comedians" do
       visit '/comedians'
 
-      within ".statistics-avg-age" do
+      within "#statistics-avg-age" do
         expect(page).to have_content("Average Age of Comedians: 33")
       end
 
-      within ".statistics-cities" do
-        expect(page).to have_content("Cities: Denver, Boulder")
+      within "#statistics-cities" do
+        expect(page).to have_content("Cities: Boulder, Denver")
       end
     end
   end
