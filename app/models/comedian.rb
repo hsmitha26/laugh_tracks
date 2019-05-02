@@ -16,7 +16,7 @@ class Comedian < ApplicationRecord
   end
 
   def self.find_cities
-    cities = self.select(:city).distinct
+    cities = self.select(:city).order(:city).distinct
     cities.map do |comedian|
       comedian.city
     end.join(", ")
