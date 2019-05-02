@@ -1,0 +1,13 @@
+<section class=comedian-show>
+  <div class="comedian-showpage-info">
+    <%= @comedian.name %>
+    <%= @comedian.age %>
+    <%= @comedian.city %>
+  </div>
+  <div class="comedian-specials-show">
+    <% @comedian.specials.each do |special| %>
+      <%= special.name %>
+      <%= special.run_time %>
+    <% end %>
+  </div>
+</section>

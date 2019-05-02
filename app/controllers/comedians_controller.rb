@@ -1,6 +1,14 @@
 class ComediansController < ApplicationController
   def index
-    @comedians = Comedian.all
+    if params[:age]
+      @comedians = Comedian.where(age: params[:age])
+    else
+      @comedians = Comedian.all
+    end
+  end
+
+  def show
+    @comedian = Comedian.find(params[:id])
   end
 
   def new
@@ -8,13 +16,15 @@ class ComediansController < ApplicationController
   end
 
   def create
-    comedian = Comedian.create(new_params)
-    redirect_to '/comedians'
+    comedian = Comedian.new(comedian_params)
+    if comedian.save
+      redirect_to "/comedians/#{comedian.id}"
+    end
   end
 
   private
 
-  def new_params
+  def comedian_params
     params.require(:comedian).permit(:name, :age, :city)
   end
 end
