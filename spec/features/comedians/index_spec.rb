@@ -65,5 +65,9 @@ RSpec.describe "As a visitor, ", type: :feature do
         expect(page).to have_content("Number of Specials: 1")
       end
     end
+
+    it "filters comedians by age" do
+      
+    end
   end
 end
