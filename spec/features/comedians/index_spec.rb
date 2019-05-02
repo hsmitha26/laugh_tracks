@@ -61,10 +61,10 @@ RSpec.describe "As a visitor, ", type: :feature do
       visit '/comedians'
 
       within "#comedian-index-#{@comedian_1.id}" do
-        expect(page).to have_content("Number of Specials: 2")
+        expect(page).to have_content("Number of Specials: #{@comedian_1.specials_count}")
       end
       within "#comedian-index-#{@comedian_2.id}" do
-        expect(page).to have_content("Number of Specials: 1")
+        expect(page).to have_content("Number of Specials: #{@comedian_2.specials_count}")
       end
     end
 
