@@ -1,3 +1,9 @@
+<section class="statistics-container">
+  <h4>Statistics</h4>
+  <h6 id="statistics-avg-age">Average Age of Comedians: <%= @average_age %></h6>
+  <h6 id="statistics-cities">Cities: <%= @cities %></h6>
+</section>
+
 <section class="comedians-container">
   <% @comedians.each do |comedian| %>
     <div id="comedian-index-<%= comedian.id %>">
