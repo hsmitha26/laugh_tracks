@@ -5,7 +5,7 @@ RSpec.describe "As a visitor, ", type: :feature do
     before :each do
       @comedian_1 = Comedian.create!(name: "Comedian 1", age: 34, city: "Denver", image: "https://home-photo-deco.com/1508-large_default/charlie-chaplin-pop-art-canvas-print.jpg")
       @comedian_2 = Comedian.create!(name: "Comedian 2", age: 31, city: "Boulder", image: "https://home-photo-deco.com/1508-large_default/charlie-chaplin-pop-art-canvas-print.jpg")
-      @comedian_3 = Comedian.create!(name: "Comedian 3", age: 34, city: "Austin", image: "https://home-photo-deco.com/1508-large_default/charlie-chaplin-pop-art-canvas-print.jpg")
+      @comedian_3 = Comedian.create!(name: "Comedian 3", age: 34, city: "Boulder", image: "https://home-photo-deco.com/1508-large_default/charlie-chaplin-pop-art-canvas-print.jpg")
 
       @special_1 = @comedian_1.specials.create!(name: "Special 1", run_time: 55)
       @special_2 = @comedian_1.specials.create!(name: "Special 2", run_time: 60)
@@ -84,6 +84,18 @@ RSpec.describe "As a visitor, ", type: :feature do
       end
 
       expect(page).to_not have_content(@comedian_2.name)
+    end
+
+    it "shows statistics about all comedians" do
+      visit '/comedians'
+
+      within ".statistics-avg-age" do
+        expect(page).to have_content("Average Age of Comedians: 33")
+      end
+
+      within ".statistics-cities" do
+        expect(page).to have_content("Cities: Denver, Boulder")
+      end
     end
   end
 end

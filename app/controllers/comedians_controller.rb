@@ -1,7 +1,7 @@
 class ComediansController < ApplicationController
   def index
     if params[:age]
-      @comedians = Comedian.where(age: params[:age])
+      @comedians = Comedian.find_by_query(params[:age])
     else
       @comedians = Comedian.all
     end

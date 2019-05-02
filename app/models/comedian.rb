@@ -6,4 +6,8 @@ class Comedian < ApplicationRecord
   def specials_count
     specials.count
   end
+
+  def self.find_by_query(age)
+    self.where(age: age)
+  end
 end
