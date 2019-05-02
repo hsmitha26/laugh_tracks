@@ -97,5 +97,17 @@ RSpec.describe "As a visitor, ", type: :feature do
         expect(page).to have_content("Cities: Boulder, Denver")
       end
     end
+
+    it "shows statistics for comedians who match url query" do
+      visit '/comedians?age=34'
+
+      within "#statistics-avg-age" do
+        expect(page).to have_content("Average Age of Comedians: 34")
+      end
+
+      within "#statistics-cities" do
+        expect(page).to have_content("Cities: Boulder, Denver")
+      end
+    end
   end
 end
