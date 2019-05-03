@@ -14,9 +14,17 @@ RSpec.describe "As a visitor, " do
       @special_4 = @comedian_3.specials.create!(name: "Special 4", run_time: 70)
     end
 
-    it "sort by comedian names in alphabetical order, by first names" do
+    xit "sort by comedian names in alphabetical order, by first names" do
       visit '/comedians?sort=name'
-
+# save_and_open_page
+      within "#comedian-index-#{@comedian_1.id}" do
+        expect(page).to have_content(@comedian_1.name)
+      end
+      within "#comedian-index-#{@comedian_3.id}" do
+        expect(page).to have_content(@comedian_3.name)
+      end
+      # expect(page.all("comedians-container")[1]).to have_content(@comedian_3.name)
+      # expect(page.all("comedians-container")[2]).to have_content(@comedian_2.name)
     end
   end
 end
