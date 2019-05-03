@@ -43,7 +43,7 @@ RSpec.describe Comedian, type: :model do
     end
 
     it "can sort comedians by first name" do
-      expect(Comedian.sort_by_name).to eq([@comedian_1, @comedian_3, @comedian_2])
+      expect(Comedian.sort_by_name(:name)).to eq([@comedian_1, @comedian_3, @comedian_2])
     end
   end
 end
