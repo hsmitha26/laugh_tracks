@@ -17,9 +17,6 @@ RSpec.describe "As a visitor, " do
     it "sort by comedian names in alphabetical order, by first names" do
       visit '/comedians?sort=name'
 
-      expect(page.all("ul")[0]).to have_content(@comedian_1.name)
-      expect(page.all("ul")[1]).to have_content(@comedian_3.name)
-      expect(page.all("ul")[2]).to have_content(@comedian_2.name)
     end
   end
 end
