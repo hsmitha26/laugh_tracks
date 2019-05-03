@@ -1,31 +1,30 @@
-<section class="statistics-container">
-  <h4>Statistics</h4>
-  <h6 id="statistics-avg-age">Average Age of Comedians: <%= @average_age %></h6>
-  <h6 id="statistics-cities">Cities: <%= @cities %></h6>
-</section>
-
-<section class="comedians-container">
-  <% @comedians.each do |comedian| %>
-    <div id="comedian-index-<%= comedian.id %>">
-      <ul>
-        <li>Name: <%= link_to comedian.name, "/comedians/#{comedian.id}" %></li>
-        <li>Age: <%= comedian.age %></li>
-        <li>Birthplace: <%= comedian.city %></li>
-        <li>Number of Specials: <%= comedian.specials_count %></li>
-      </ul>
-      <img class="face-pic" id="comedian-face-<%= comedian.id %>" src="<%= comedian.image %>"/>
-    </div>
-      <% comedian.specials.each do |special| %>
-        <div id="comedian-specials-<%= special.id %>">
-          <ul>
-            <li>Special Name: <%= special.name %></li>
-            <li>Run Time (in minutes): <%= special.run_time %></li>
-          </ul>
-        </div>
-      <% end %>
-    <% end %>
-</section>
+<header class="statistics-container">
+  <h1>Laugh Tracks</h1>
+  <h3>Statistics</h3>
+  <p id="statistics-avg-age">Average Age of Comedians: <%= @average_age %></p>
+  <p id="statistics-cities">Cities: <%= @cities %></p>
+</header>
 
 <section class=add-new-comedian>
   <%= button_to "Add New Comedian", comedians_new_path, method: :get %>
 </section>
+
+<main class="comedians-container">
+    <% @comedians.each do |comedian| %>
+      <article class="comedian-card">
+        <div id="comedian-index-<%= comedian.id %>">
+          <h4 class="comedians">Name: <%= link_to comedian.name, "/comedians/#{comedian.id}" %></h4>
+          <h5 class="comedians">Age: <%= comedian.age %></h5>
+          <h5 class="comedians">Birthplace: <%= comedian.city %></h5>
+          <h5 class="comedians">Number of Specials: <%= comedian.specials_count %></h5>
+          <img class="face-pic" id="comedian-face-<%= comedian.id %>" src="<%= comedian.image %>"/>
+        </div>
+        <% comedian.specials.each do |special| %>
+          <div id="comedian-specials-<%= special.id %>">
+            <h4 class="specials" >Special Name: <%= special.name %></h4>
+            <h5 class="specials">Run Time (in minutes): <%= special.run_time %></h5>
+          </div>
+        <% end %>
+      </article>
+    <% end %>
+</main>

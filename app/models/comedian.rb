@@ -21,4 +21,8 @@ class Comedian < ApplicationRecord
       comedian.city
     end.join(", ")
   end
+
+  def self.sort_by_name(name)
+    self.order(name)
+  end
 end

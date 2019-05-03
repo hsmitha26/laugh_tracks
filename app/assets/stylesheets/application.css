@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+
+.statistics-container,  .comedian-card, .comedian-show, .comedian-specials-show {
+  box-shadow: -6px 8px 6px -6px black;
+}
+
+ .face-pic {
+   width: 200px;
+   padding: 20px;
+ }
+
+ #face-pic {
+   width: 500px;
+   padding: 40px;
+ }
+
+ .comedians-container {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-gap: 20px;
+   padding: 20px;
+ }
+
+ .specials, .comedians, .comedian-show {
+   margin: 10px;
+ }
+
+ .comedian-specials-show {
+   margin: 30px;
+ }

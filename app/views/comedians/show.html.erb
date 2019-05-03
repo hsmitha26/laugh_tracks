@@ -1,18 +1,12 @@
 <section class="comedian-show">
-  <div id="comedian-showpage-info">
-    <ul>
-      <li>Name: <%= @comedian.name %></li>
-      <li>Age: <%= @comedian.age %></li>
-      <li>City: <%= @comedian.city %></li>
-    </ul>
-    <img id="face-pic" src="<%= @comedian.image %>"/>
-  </div>
-  <div id="comedian-specials-show">
-    <% @comedian.specials.each do |special| %>
-    <ul>
-      <li>Special Name: <%= special.name %></li>
-      <li>Run Time in Minutes: <%= special.run_time %></li>
-    </ul>
-    <% end %>
-  </div>
+  <h2>Name: <%= @comedian.name %></h2>
+  <h4>Age: <%= @comedian.age %></h4>
+  <h4>City: <%= @comedian.city %></h4>
+  <img id="face-pic" src="<%= @comedian.image %>"/>
 </section>
+  <div class="comedian-specials-show">
+  <% @comedian.specials.each do |special| %>
+    <h4>Special Name: <%= special.name %></h4>
+    <h4>Run Time in Minutes: <%= special.run_time %></h4>
+  <% end %>
+  </div>

@@ -12,9 +12,9 @@ RSpec.describe Comedian, type: :model do
   end
 
   before :each do
-    @comedian_1 = Comedian.create!(name: "Comedian 1", age: 31, city: "Denver", image: "https://home-photo-deco.com/1508-large_default/charlie-chaplin-pop-art-canvas-print.jpg")
-    @comedian_2 = Comedian.create!(name: "Comedian 2", age: 34, city: "Boulder", image: "https://home-photo-deco.com/1508-large_default/charlie-chaplin-pop-art-canvas-print.jpg")
-    @comedian_3 = Comedian.create!(name: "Comedian 3", age: 34, city: "Boulder", image: "https://home-photo-deco.com/1508-large_default/charlie-chaplin-pop-art-canvas-print.jpg")
+    @comedian_1 = Comedian.create!(name: "Abby Z.", age: 31, city: "Denver", image: "https://home-photo-deco.com/1508-large_default/charlie-chaplin-pop-art-canvas-print.jpg")
+    @comedian_2 = Comedian.create!(name: "Bob G.", age: 34, city: "Boulder", image: "https://home-photo-deco.com/1508-large_default/charlie-chaplin-pop-art-canvas-print.jpg")
+    @comedian_3 = Comedian.create!(name: "Bill Phil", age: 34, city: "Boulder", image: "https://home-photo-deco.com/1508-large_default/charlie-chaplin-pop-art-canvas-print.jpg")
 
     @special_1 = @comedian_1.specials.create!(name: "Special 1", run_time: 55)
     @special_2 = @comedian_1.specials.create!(name: "Special 2", run_time: 60)
@@ -40,6 +40,10 @@ RSpec.describe Comedian, type: :model do
 
     it "can find unique cities of comedians" do
       expect(Comedian.find_cities).to eq("Boulder, Denver")
+    end
+
+    it "can sort comedians by first name" do
+      expect(Comedian.sort_by_name(:name)).to eq([@comedian_1, @comedian_3, @comedian_2])
     end
   end
 end
