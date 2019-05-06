@@ -22,7 +22,7 @@ RSpec.describe Special do
       @special_3 = @comedian_2.specials.create!(name: "Special 3", run_time: 65)
       @special_4 = @comedian_3.specials.create!(name: "Special 4", run_time: 70)
     end
-    
+
     it "can calculate total number of TV specials for all comedians" do
       expect(Special.total_specials).to eq(4)
     end

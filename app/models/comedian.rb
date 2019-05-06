@@ -25,4 +25,8 @@ class Comedian < ApplicationRecord
   def self.sort_by_name(name)
     self.order(name)
   end
+  #
+  # def self.total_specials
+  #   binding.pry
+  # end
 end

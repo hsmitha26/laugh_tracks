@@ -16,15 +16,16 @@ RSpec.describe "As a visitor, " do
 
     xit "sort by comedian names in alphabetical order, by first names" do
       visit '/comedians?sort=name'
-# save_and_open_page
-      within "#comedian-index-#{@comedian_1.id}" do
-        expect(page).to have_content(@comedian_1.name)
-      end
-      within "#comedian-index-#{@comedian_3.id}" do
-        expect(page).to have_content(@comedian_3.name)
-      end
-      # expect(page.all("comedians-container")[1]).to have_content(@comedian_3.name)
-      # expect(page.all("comedians-container")[2]).to have_content(@comedian_2.name)
+# # save_and_open_page
+#       within "#comedian-index-#{@comedian_1.id}" do
+#         expect(page).to have_content(@comedian_1.name)
+#       end
+#       within "#comedian-index-#{@comedian_3.id}" do
+#         expect(page).to have_content(@comedian_3.name)
+#       end
+      # expect(page).to have_selector(".comedian-container(0)", content: @comedian_1.name)
+      # expect(page).to have_selector(".comedian-container(1)", content: @comedian_3.name)
+      # expect(page).to have_selector(".comedian-container(2)", content: @comedian_2.name)
     end
   end
 end
