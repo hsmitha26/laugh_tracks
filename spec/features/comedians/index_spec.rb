@@ -125,5 +125,13 @@ RSpec.describe "As a visitor, ", type: :feature do
         expect(page).to have_link(@comedian_3.name)
       end
     end
+
+    it "shows total count of all tv specials" do
+      visit '/comedians'
+
+      within ".statistics-container" do
+        expect(page).to have_content("Total Number of TV Specials: 4")
+      end
+    end
   end
 end

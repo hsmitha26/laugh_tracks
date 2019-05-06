@@ -11,6 +11,7 @@ class ComediansController < ApplicationController
       @average_age = @comedians.find_average_age.to_i
       @cities = @comedians.find_cities
     end
+    @total_specials = Special.total_specials
   end
 
   def show

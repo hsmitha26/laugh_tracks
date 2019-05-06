@@ -4,9 +4,9 @@
   <h4>City: <%= @comedian.city %></h4>
   <img id="face-pic" src="<%= @comedian.image %>"/>
 </section>
-  <div class="comedian-specials-show">
   <% @comedian.specials.each do |special| %>
+  <div class="comedian-specials-show">
     <h4>Special Name: <%= special.name %></h4>
     <h4>Run Time in Minutes: <%= special.run_time %></h4>
-  <% end %>
   </div>
+  <% end %>
